@@ -1,0 +1,242 @@
+Project Documentation
+Library Management System (Java – Console Based)
+1. Introduction
+
+The Library Management System is a console-based Java application designed to simulate the core operations of a real library.
+The project focuses on applying Object-Oriented Programming (OOP) principles in a clean, modular, and educational way, without using any graphical user interface.
+
+This system allows managing books, periodicals, and customers, with the ability to borrow and return items under predefined rules.
+
+2. System Overview (Three Main Steps)
+🔹 Step 1: System Design & Class Structure
+
+The system is built using a modular Object-Oriented design, where each real-world entity in the library is represented by a dedicated class.
+
+Main Classes:
+
+Book: Represents books in the library.
+
+Periodical: Represents magazines and journals (inherits from Book).
+
+Customer: Represents library users.
+
+Library: Core controller that manages books and customers.
+
+Main: Entry point of the application.
+
+Each class has clearly defined attributes and methods, ensuring separation of responsibilities, code readability, and maintainability.
+
+This step focuses on:
+
+Identifying system entities
+
+Defining relationships between classes
+
+Applying inheritance where appropriate
+
+🔹 Step 2: Core System Logic (Borrowing & Management)
+
+This step implements the main functionality of the library system.
+
+Book Management:
+
+Adding and deleting books and periodicals
+
+Checking book availability
+
+Tracking borrowed books
+
+Storing borrow dates
+
+Customer Management:
+
+Registering and deleting customers
+
+Limiting the maximum number of books a customer can borrow
+
+Tracking customer borrowing history
+
+Borrow & Return Rules:
+
+A book can only be borrowed if it is available
+
+A customer cannot exceed the maximum borrowing limit
+
+Borrowed books are moved to a borrowed list
+
+Returned books are restored to the available list
+
+This logic ensures data integrity and simulates real-world library rules.
+
+🔹 Step 3: Data Review & Output (Console Interaction)
+
+The final step focuses on reviewing and displaying system data through the console.
+
+The system allows:
+
+Printing all books and available books
+
+Printing borrowed books and their details
+
+Displaying customer information
+
+Viewing borrowed books per customer
+
+Each class contains customized print methods, ensuring clear and readable console output.
+
+3. Classes Description
+i) Book Class
+1. Attributes
+
+id: Unique identifier for the book.
+
+name: Name of the book.
+
+numberOfPages: Total number of pages.
+
+author: Author name.
+
+customerName: Name of the customer who borrowed the book.
+
+isBookCanBorrowed: Indicates whether the book can be borrowed.
+
+numberOfAvailableBooks: Total number of available copies.
+
+isBookAvailable: Determines whether the book is currently available.
+
+borrowDate: Date when the book was borrowed.
+
+allBooks: List containing all books in the system.
+
+borrowedBooks: List containing currently borrowed books.
+
+2. Methods
+
+getNumberOfAllBorrowedBooks(): Prints the number of borrowed books.
+
+deleteBookOrPeriodical(Book b): Deletes a given book or periodical.
+
+printBookInformation(): Prints book details.
+
+printBorrowedBooksDetails(): Prints details of borrowed books.
+
+printAllBooksNames(): Prints names of all books.
+
+printAllAvailableBooksNames(): Prints names of available books only.
+
+getBook(int bookId): Retrieves a book using its unique ID.
+
+3. Constructors
+
+Book(): Default constructor.
+
+Book(String name, int pages, String author): Constructor with parameters.
+
+ii) Customer Class
+1. Attributes
+
+id: Unique customer identifier.
+
+firstName: Customer first name.
+
+lastName: Customer last name.
+
+phoneNumber: Customer phone number.
+
+isCustomerAvailable: Indicates whether the customer is active.
+
+numberOfAvailableCustomers: Total number of available customers.
+
+maxNumberOfBooks: Maximum number of books a customer can borrow.
+
+cart: List of books borrowed by the customer.
+
+allCustomers: List of all customers.
+
+borrowedCustomers: List of customers who have borrowed books.
+
+2. Methods
+
+setPhoneNumber(long phone): Sets customer phone number.
+
+getPhoneNumber(): Returns customer phone number.
+
+deleteCustomer(Customer c): Removes a customer from the system.
+
+printCustomerInformation(): Prints customer details.
+
+printAllCustomersName(): Prints all customers’ names.
+
+printAllBorrowedCustomersName(): Prints names of customers who borrowed books.
+
+printCustomerCart(): Prints borrowed books list.
+
+borrowBook(Book b): Allows a customer to borrow a book.
+
+returnBorrowBook(Book b): Returns a borrowed book.
+
+getCustomer(int customerId): Retrieves customer by ID.
+
+3. Constructors
+
+Customer(): Default constructor.
+
+Customer(String firstName, String lastName, long phoneNumber): Constructor with parameters.
+
+iii) Periodical Class
+1. Attributes
+
+type: Type of periodical (e.g., magazine, journal).
+
+Inherits all attributes from Book.
+
+2. Methods
+
+printBookInformation(): Overrides the Book method to display periodical-specific information.
+
+3. Constructors
+
+Periodical(): Default constructor.
+
+Periodical(String name, int pages, String author, int type): Constructor with parameters.
+
+4. Variables Dictionary
+Variable Name	Type	Description
+id	Integer	Unique identifier used across all classes
+name	String	Stores item names
+isBookBorrowed	Boolean	Determines if a book is borrowed
+isAvailable	Boolean	Indicates if an item exists in the system
+borrowDate	LocalDate	Stores the borrowing date
+type	String	Periodical type
+phoneNumber	Long	Customer phone number
+numberOfBorrowedBooks	Integer	Number of borrowed books
+maxNumberOfBooks	Integer	Maximum books allowed
+cart	List<Book>	Borrowed books list
+allCustomers	ArrayList<Customer>	All customers
+borrowedCustomers	ArrayList<Customer>	Customers who borrowed books
+allBooks	ArrayList<Book>	All books
+borrowedBooks	ArrayList<Book>	Borrowed books
+5. OOP Concepts Applied
+
+Encapsulation: Sensitive data such as phone numbers are protected using getters and setters.
+
+Inheritance: Periodical extends Book to reuse common behavior.
+
+Abstraction: An abstract Menu class defines shared behavior without instantiation.
+
+Polymorphism: Overridden methods provide customized behavior per class.
+
+Modularity: Each class handles a single responsibility.
+
+6. Conclusion
+
+This project demonstrates how a real-world system can be modeled using Java and Object-Oriented Programming.
+The clear structure, borrowing rules, and separation of concerns make the system easy to understand, maintain, and extend in the future.
+
+7. Contact Information
+
+For inquiries or further explanation of any part of the system or code:
+
+📞 Phone: +218910079249
+
+📧 Email: Fbythe@gmail.com
